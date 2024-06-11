@@ -69,7 +69,7 @@ class BlenderNeRF_Operator(bpy.types.Operator):
 
         initFrame = scene.frame_current
         step = scene.train_frame_steps if (mode == 'TRAIN' and method == 'SOF') else scene.frame_step
-        end = scene.frame_start + scene.nb_frames - 1 if (mode == 'TRAIN' and method == 'COS') else scene.frame_end
+        end = scene.frame_start + scene.nb_frames - 1 if (mode == 'TRAIN' or mode == 'TEST' and method == 'COS') else scene.frame_end
 
         camera_extr_dict = []
         for frame in range(scene.frame_start, end + 1, step):
