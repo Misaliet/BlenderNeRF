@@ -66,7 +66,8 @@ class CameraOnSphere(blender_nerf_operator.BlenderNeRF_Operator):
                 scene.rendering = (False, False, True)
                 scene.frame_end = scene.frame_start + scene.nb_frames - 1 # update end frame
                 scene.render.filepath = os.path.join(output_train, '') # training frames path
-                bpy.ops.render.render("INVOKE_DEFAULT", animation=True, write_still=True) # render scene
+                # bpy.ops.render.render("INVOKE_DEFAULT", animation=True, write_still=True) # render scene
+                bpy.ops.render.render(animation=True, write_still=True) # render scene
 
         return {'FINISHED'}
     
@@ -131,7 +132,8 @@ class CameraOnSphereTest(blender_nerf_operator.BlenderNeRF_Operator):
                 # scene.frame_end = scene.frame_start + scene.frame_end - 1 # update end frame
                 scene.frame_end = scene.frame_start + scene.nb_frames - 1 # update end frame
                 scene.render.filepath = os.path.join(output_test, '') # training frames path
-                bpy.ops.render.render("INVOKE_DEFAULT", animation=True, write_still=True) # render scene
+                # bpy.ops.render.render("INVOKE_DEFAULT", animation=True, write_still=True) # render scene
+                bpy.ops.render.render(animation=True, write_still=True) # render scene
 
         return {'FINISHED'}
     
