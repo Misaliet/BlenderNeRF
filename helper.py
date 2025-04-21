@@ -91,6 +91,8 @@ def sample_from_sphere(scene):
     # sample random angles
     theta = random.random() * 2 * math.pi
     phi = random.random() * 2 * math.pi
+    # theta =  random.uniform(-0.1, 0.1) * 2 * math.pi
+    # phi = random.uniform(0.9, 1.1) * 0.5 * math.pi
 
     # uniform sample from unit sphere, given theta and phi
     unit_x = math.cos(theta) * math.sin(phi)
